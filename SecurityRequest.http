@@ -16,3 +16,12 @@ Content-Type: application/json
   "email" : "test@gmail.com",
   "password": "1234"
 }
+
+### 3. 로그인(패스워드 불일치)
+POST http://localhost:8080/api/v1/login
+Content-Type: application/json
+
+{
+  "email" : "test@gmail.com",
+  "password": "12345"
+}
