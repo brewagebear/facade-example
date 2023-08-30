@@ -1,0 +1,13 @@
+server:
+  port: 8080
+
+jwt:
+  header-type: "JWT"
+  issuer: "BrewageBear"
+  prefix: "Bearer"
+  secret: "VGhlU1pTX0hvbWV3b2tyMXMxbnRlcmVzdDFuZ0JlY2F1c2VpVERlYWxzd2l0SEFudW1CZXIwZkMwbXBsZXghc3NVZXNBbjVoNHNBdkFyaWVUeTBmZzZhMXMu"
+  expiration: 600000
+
+encryptor:
+  secret: "?D(G+KbPeShVmYq3t6w9y$B&E)H@McQf"
+  salt: "38782F413F4428472D4B6150645367566B597033733676397924422645294840"
