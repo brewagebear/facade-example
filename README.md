@@ -51,8 +51,8 @@ Content-Type: application/json
 <img width="1662" alt="Screenshot 2023-08-31 at 00 32 31" src="https://github.com/brewagebear/facade-example/assets/22961251/0288625f-2f5a-48da-beeb-ca01ace58728">
 
 
-별도의 서버로 띄워진 경우에는 `restTemplate` 든 `webClient` 든으로 작업하시면 됩니다.
-그렇게되면 아래의 작업이 변경되겠죠? 
+별도의 서버로 띄워져있고, 저런식으로 모듈 컴파일해서 사용하지 않는다면 `restTemplate` 든 `webClient` 든으로 작업하시면 됩니다.
+그렇게되면 아래의 작업이 변경되겠죠? (`memberService` 에 대한 의존성이 사라짐)
 
 ```java
 private void validationPassword(MemberCommand.LoginMemberRequest request) {
