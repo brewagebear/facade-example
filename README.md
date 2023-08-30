@@ -49,3 +49,19 @@ Content-Type: application/json
 
 불일치의 경우에는 따로 DTO을 안만들어놔서 아래와 같이 익셉션 터지는 것으로 확인가능합니다.
 <img width="1662" alt="Screenshot 2023-08-31 at 00 32 31" src="https://github.com/brewagebear/facade-example/assets/22961251/0288625f-2f5a-48da-beeb-ca01ace58728">
+
+
+별도의 서버로 띄워진 경우에는 `restTemplate` 든 `webClient` 든으로 작업하시면 됩니다.
+그렇게되면 아래의 작업이 변경되겠죠? 
+
+```java
+private void validationPassword(MemberCommand.LoginMemberRequest request) {
+        MemberInfo.secret secret = memberService.retrieveMemberSecretInfo(request.email(), request.password());
+
+        if(!passwordEncoder.matches(request.password(), secret.password())) {
+            throw new RuntimeException("비밀번호가 일치하지 않습니다.");
+        }
+    }
+```
+
+여기서 `memberService.retrieveMemberSecretInfo(request.email(), request.password());` 부분만 외부 서버를 통해서 통신하게끔 처리하면됩니다.
